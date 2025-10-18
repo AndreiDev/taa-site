@@ -64,7 +64,7 @@ export default function Navigation() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-white hover:text-[#D4AF37] transition-colors"
+              className="bg-transparent md:hidden text-white hover:text-[#D4AF37] transition-colors"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -86,7 +86,7 @@ export default function Navigation() {
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left text-white hover:text-[#D4AF37] transition-colors duration-300 py-2"
+                  className="bg-transparent block w-full text-left text-white hover:text-[#D4AF37] transition-colors duration-300 py-2"
                   style={{ fontFamily: 'Inter, sans-serif' }}
                 >
                   {item.label}

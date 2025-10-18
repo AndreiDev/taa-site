@@ -124,8 +124,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
             onClick={() => scrollToSection('#about')}
-            className="bg-transparent absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white/70 hover:text-white transition-colors animate-bounce">
-
+            className="bg-transparent text-white/70 hover:text-white transition-colors animate-bounce">
             <ChevronDown size={40} />
           </motion.button>
         </div>
@@ -333,7 +332,7 @@ export default function Home() {
               </a>
             </p>
             <a
-              href="https://www.linkedin.com/in/ilana-averkin/"
+              href="https://www.linkedin.com/in/ilanaaverkin/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-[#003E4E] hover:text-[#D4AF37] transition-colors duration-300">
@@ -361,7 +360,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center gap-4 mb-8">
             <a
-              href="https://www.linkedin.com/in/ilana-averkin/"
+              href="https://www.linkedin.com/in/ilanaaverkin/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#D4AF37] hover:text-white transition-colors duration-300">
