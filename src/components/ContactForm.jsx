@@ -17,16 +17,26 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Create mailto link
     const mailtoLink = `mailto:ilana@theaverkinapproach.com?subject=Contact from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ACompany: ${formData.company}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
-    
-    window.location.href = mailtoLink;
+
+    // Use a programmatic anchor click for better compatibility across browsers
+    const a = document.createElement('a');
+    a.href = mailtoLink;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    // Reflect intent (handoff to mail app)
     setIsSubmitted(true);
-    
+
+    // Keep form values so user can retry or copy the message
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormData({ name: '', email: '', company: '', message: '' });
+      // If you prefer to clear automatically, uncomment below:
+      // setFormData({ name: '', email: '', company: '', message: '' });
     }, 3000);
   };
 
@@ -113,7 +123,7 @@ export default function ContactForm() {
           {isSubmitted ? (
             <>
               <CheckCircle className="mr-2" size={20} />
-              Message Sent!
+              Opening your email app…
             </>
           ) : (
             <>
@@ -122,6 +132,12 @@ export default function ContactForm() {
             </>
           )}
         </Button>
+        <p className="text-sm text-[#003E4E] mt-2">
+          If your email app didn’t open, email us at{' '}
+          <a className="underline" href="mailto:ilana@theaverkinapproach.com">
+            ilana@theaverkinapproach.com
+          </a>.
+        </p>
       </div>
     </motion.form>
   );
